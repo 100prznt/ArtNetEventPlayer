@@ -9,3 +9,13 @@ The core of the software is an ArtNet receiver, which listens to changes in a de
 
 When the program is started, a separate instance is created for each configured player. The associated WaveOut object is started in a separate task. This means that the sound output is not interrupted by other players or the ArtNet receiver. Depending on the system performance, it is of course not possible to instantiate an unlimited number of players simultaneously.
 The _Track Library_ is also created when the program is started. In addition to the audio files (*.mp3), this library contains the playback position and the assigned DMX value range. When a player on the ``TrackChannel`` receives a changed value, the player searches the _Track Library_ for a fitting entry and plays the track after the next stop/play cycle.
+
+## DMX Channels
+
+3 DMX channels are required for each player. The channel numbers can be freely defined, but must be within an Art Net universe (512 channels).
+
+| Channel            | Description              |                                             | 
+|--------------------|--------------------------|---------------------------------------------|
+| ``ControlChannel`` | set the player mode      | 0..84: stop; 85..169: play; 170..255: pause |
+| ``VolumeChannel``  | set the player volume    | 0..255: 0..100 %                            |
+| ``TrackChannel``   | select the track to play | 0..255: track mapping as configured         |
