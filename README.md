@@ -15,7 +15,7 @@ The _Track Library_ is also created when the program is started. In addition to 
 3 DMX channels are required for each player. The channel numbers can be freely defined, but must be within an Art Net universe (512 channels).
 
 | Channel            | Description              | Data                                        | 
-|--------------------|--------------------------|---------------------------------------------|
+|:-------------------|:-------------------------|:--------------------------------------------|
 | ``ControlChannel`` | set the player mode      | 0..84: stop; 85..169: play; 170..255: pause |
 | ``VolumeChannel``  | set the player volume    | 0..255: 0..100 %                            |
 | ``TrackChannel``   | select the track to play | 0..255: track mapping as configured         |
