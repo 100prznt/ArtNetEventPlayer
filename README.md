@@ -1,4 +1,4 @@
-# ArtNetEventPlayer
+# ArtNet Event Player
 A ArtNet controllable multitrack audio player. I developed this software for my home halloween show. Here I control DMX spotlights and effects via cues in [DMX Control 3](https://dmxcontrol.de/de/dmxcontrol-3/funktionen.html). The ArtNetEventPlayer is used in combination with Bluetooth speakers to automatically and synchronize sound effects in addition to light and fog.
 
 ## How it works
