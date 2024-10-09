@@ -87,8 +87,11 @@ namespace EventPlayer
             var address = new Address(new Subnet(0), new Universe(0));
             var portAddress = new PortAddress(address);
 
-            NodeInstance nodeInstance = new NodeInstance(ArtNet.Instance);
-            nodeInstance.Name = nodeInstance.ShortName = "ArtNetNode EventPlayer";
+            NodeInstance nodeInstance = new(ArtNet.Instance)
+            {
+                ShortName = "EventPlayer",
+                Name = "ArtNet Event Player"
+            };
 
             nodeInstance.AddPortConfig(new PortConfig(1, portAddress, true, false)
             {
@@ -117,10 +120,7 @@ namespace EventPlayer
             // Can be called from anywere anytime without listen to the Event!!!
             var data = ni.GetReceivedDMX(e);
 
-            DmxByte39 = data[38];
-            DmxByte40 = data[39];
-            DmxByte41 = data[40];
-
+            m_Players.ForEach(p => { p.ApplyDmxData(data); });
         }
 
         #endregion ArtNet handling
