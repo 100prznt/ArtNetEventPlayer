@@ -8,9 +8,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <local:PlayerControl DataContext="{Binding Players[0]}" />
-            <local:PlayerControl DataContext="{Binding Players[1]}" />
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <local:PlayerControl DataContext="{Binding Players[0]}" />
+                <local:PlayerControl DataContext="{Binding Players[1]}" />
+            </StackPanel>
+            <DataGrid Height="100" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+
         </StackPanel>
     </Grid>
 </Window>
